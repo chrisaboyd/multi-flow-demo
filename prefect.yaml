@@ -21,15 +21,27 @@ pull:
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name: null
-  version: null
-  tags: []
-  description: null
-  schedule: {}
-  flow_name: null
-  entrypoint: null
-  parameters: {}
+- name: local_deploy_1
+  entrypoint: ./healthcheck_flow_a.py:healthcheck
   work_pool:
-    name: null
+    name: local_test
+    work_queue_name: null
+    job_variables: {}
+- name: local_deploy_2
+  entrypoint: ./healthcheck_flow_b.py:healthcheck
+  work_pool:
+    name: local_test
+    work_queue_name: null
+    job_variables: {}
+- name: local_deploy_3
+  entrypoint: ./healthcheck_flow_c.py:healthcheck
+  work_pool:
+    name: local_test
+    work_queue_name: null
+    job_variables: {}
+- name: local_deploy_4
+  entrypoint: ./healthcheck_flow_d.py:healthcheck
+  work_pool:
+    name: local_test
     work_queue_name: null
     job_variables: {}
